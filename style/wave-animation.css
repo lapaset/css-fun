@@ -1,0 +1,84 @@
+@keyframes wave-animation {
+  from {
+    inset: 34% 0 0 0
+  }
+
+  to {
+    inset: 30% 0 0 0;
+  }
+
+  0% {
+    -webkit-filter: url("#filter1");
+    filter: url("#filter1");
+  }
+
+  8% {
+    -webkit-filter: url("#filter2");
+    filter: url("#filter2");
+  }
+
+  16% {
+    -webkit-filter: url("#filter3");
+    filter: url("#filter3");
+  }
+
+  24% {
+    -webkit-filter: url("#filter4");
+    filter: url("#filter4");
+  }
+
+  32% {
+    -webkit-filter: url("#filter5");
+    filter: url("#filter5");
+  }
+
+  39% {
+    -webkit-filter: url("#filter6");
+    filter: url("#filter6");
+  }
+
+  45% {
+    -webkit-filter: url("#filter7");
+    filter: url("#filter7");
+  }
+
+  52% {
+    -webkit-filter: url("#filter8");
+    filter: url("#filter8");
+  }
+
+  58% {
+    -webkit-filter: url("#filter9");
+    filter: url("#filter9");
+  }
+
+  65% {
+    -webkit-filter: url("#filter10");
+    filter: url("#filter10");
+  }
+
+  71% {
+    -webkit-filter: url("#filter11");
+    filter: url("#filter11");
+  }
+
+  78% {
+    -webkit-filter: url("#filter12");
+    filter: url("#filter12");
+  }
+
+  85% {
+    -webkit-filter: url("#filter13");
+    filter: url("#filter13");
+  }
+
+  92% {
+    -webkit-filter: url("#filter14");
+    filter: url("#filter14");
+  }
+
+  100% {
+    -webkit-filter: url("#filter15");
+    filter: url("#filter15");
+  }
+}

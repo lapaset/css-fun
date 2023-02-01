@@ -1,0 +1,90 @@
+@import 'wave-animation.css';
+
+#sea-container {
+  position: relative;
+  max-width: 500px;
+  max-height: 300px;
+  z-index: -1;
+  content: '';
+  background: linear-gradient(rgba(251, 103, 18, 0.2), rgb(216, 191, 216, 0.8));
+}
+
+#sky {
+  position: relative;
+  height: 35%;
+  top: 0;
+  background: linear-gradient(rgba(90, 189, 247, 0.5), rgb(216, 191, 216, 0.6) 80%, rgba(111, 156, 234, 0.5) 95%, rgba(92, 137, 216, 0.6));
+  z-index: 3;
+}
+
+#sea::before,
+#sea::after {
+  position: relative;
+  display: block;
+  z-index: 0;
+  content: '';
+  --grad: linear-gradient(transparent, rgb(1, 1, 5, 0.3) 10%, rgb(128, 128, 128) 30%);
+  --mask: var(--grad), var(--grad);
+  -webkit-mask: var(--mask);
+  -webkit-mask-composite: source-in;
+  mask: var(--mask);
+  mask-composite: intersect;
+  mix-blend-mode: color;
+  z-index: -1;
+}
+
+#sea::before {
+  position: absolute;
+  top: 0;
+  background: black;
+  animation: wave-animation 3s infinite alternate;
+  animation-timing-function: linear;
+  -webkit-filter: url("#filter1");
+  filter: url("#filter1");
+}
+
+#sea::after {
+  background: linear-gradient(rgb(216, 191, 216), rgb(216, 191, 216, 0.6), rgba(251, 103, 18, 0.4), rgba(71, 150, 195, 0.6), rgb(47, 79, 79));
+  width: 100%;
+  height: 65%;
+}
+
+.boat {
+  position: absolute;
+  top: 40%;
+  left: 20%;
+  animation: rock 1.8s infinite alternate, move 100s infinite;
+  animation-timing-function: linear;
+  z-index: 3;
+}
+
+#boat-top {
+  position: relative;
+  width: 0;
+  height: 0;
+  left: 5px;
+  border-style: solid;
+  border-width: 0 10px 60px 20px;
+  border-color: transparent transparent rgba(107, 65, 144, 0.9) transparent;
+  background: transparent;
+}
+
+#boat-bottom {
+  position: relative;
+  bottom: 0;
+  top: 1px;
+  background: rgba(107, 65, 144, 0.7);
+  width: 45px;
+  height: 9px;
+  border-radius: 0 0 50% 40%;
+}
+
+@keyframes rock {
+  from {
+    transform: rotate(2deg)
+  }
+
+  to {
+    transform: rotate(-2deg)
+  }
+}

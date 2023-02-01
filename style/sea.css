@@ -1,0 +1,45 @@
+@import "boats.css";
+@import "wave-animation.css";
+
+body {
+  position: fixed;
+  inset: 0 0 0 0;
+  z-index: -1;
+  content: '';
+  background: linear-gradient(rgba(251, 103, 18, 0.2), rgb(216, 191, 216, 0.8));
+}
+
+#sky {
+  position: fixed;
+  inset: 0 0 65% 0;
+  background: linear-gradient(rgba(90, 189, 247, 0.5), rgb(216, 191, 216, 0.6) 80%, rgba(111, 156, 234, 0.5) 95%, rgba(92, 137, 216, 0.6));
+  z-index: 3;
+}
+
+#sea::before,
+#sea::after {
+  position: fixed;
+  inset: 34% 0 0 0;
+  z-index: 0;
+  content: '';
+  --grad: linear-gradient(transparent, rgb(1, 1, 5, 0.3) 10%, gray 30%);
+  --mask: var(--grad), var(--grad);
+  -webkit-mask: var(--mask);
+  -webkit-mask-composite: source-in;
+  mask: var(--mask);
+  mask-composite: intersect;
+  mix-blend-mode: color;
+  z-index: -1;
+}
+
+#sea::before {
+  background: rgb(0, 0, 0);
+  animation: wave-animation 3s infinite alternate;
+  animation-timing-function: linear;
+  -webkit-filter: url("#filter1");
+  filter: url("#filter1");
+}
+
+#sea::after {
+  background: linear-gradient(rgb(216, 191, 216), rgb(216, 191, 216, 0.6), rgba(251, 103, 18, 0.4), rgb(71, 150, 195, 0.6), rgb(47, 79, 79));
+}

@@ -1,0 +1,57 @@
+@import 'background.css';
+@import 'sea-thumbnail.css';
+
+body {
+  font-family: 'Unbounded', cursive;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  max-width: 600px;
+  margin: auto;
+}
+
+h1 {
+  font-size: 3em;
+  text-align: center;
+}
+
+a {
+  color: inherit;
+}
+
+#image-link {
+  transition: max-width 0.2s;
+  width: 400px;
+  height: 300px;
+  max-width: 80vw;
+  max-height: 60vw;
+  border-style: solid; 
+  color: black;
+  border-width: 5px;
+  overflow: hidden;
+}
+
+#image-link:hover, #image-link:active {
+  box-shadow: 0 1.5em 1em -1em black;
+  transition: box-shadow 0.2s, transform 0.2s;
+  transform: translateY(-0.5em);
+}
+
+#image-link:active {
+  max-width: 84vw;
+  max-height: 63vw;
+}
+
+a img {
+  width: 100%;
+}
+
+footer {
+  max-width: 600px;
+  margin: 32px auto;
+  text-align: center;
+}
