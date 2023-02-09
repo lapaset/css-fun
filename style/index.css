@@ -5,13 +5,16 @@ body {
   font-family: 'Unbounded', cursive;
 }
 
-main {
+#container {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
+  min-height: 80vh;
+}
+
+main {
   max-width: 600px;
-  margin: auto;
 }
 
 h1 {
@@ -24,12 +27,16 @@ a {
 }
 
 #image-link {
+  display: block;
+  position: relative;
+  z-index: 1;
   transition: max-width 0.2s;
   width: 400px;
   height: 300px;
   max-width: 80vw;
   max-height: 60vw;
-  border-style: solid; 
+  margin: auto;
+  border-style: solid;
   color: black;
   border-width: 5px;
   overflow: hidden;
@@ -52,6 +59,11 @@ a img {
 
 footer {
   max-width: 600px;
-  margin: 32px auto;
+  margin: 16px;
   text-align: center;
+}
+
+svg {
+  height: 0;
+  width: 0;
 }
